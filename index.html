@@ -75,6 +75,17 @@ h6 {color: #419745; font-size: 18px}
       <i class="fa fa-search"></i>
     </p>
   </header>
+  
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+    <img class="mySlides" src="code image/img_chicago.jpg" alt="Jeans" style="width:100%">
+    <img class="mySlides" src="code image/img_la.jpg" alt="Jeans" style="width:100%">
+    <img class="mySlides" src="code image/img_ny.jpg" alt="Jeans" style="width:100%">
+    
+  </div>
+
+  <br>
+  <br>
 
 
   
@@ -446,6 +457,22 @@ function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
   document.getElementById("myOverlay").style.display = "none";
 }
+  
+  var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
 </script>
 
 </body>
